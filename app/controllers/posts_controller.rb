@@ -11,6 +11,8 @@ class PostsController < ApplicationController
 
     def create
         @post = current_user.posts.build(post_params)
+        @name = current_user.name
+        @username = current_user.username
 
         if @post.save
             redirect_to @post
@@ -21,6 +23,8 @@ class PostsController < ApplicationController
 
     def show
         @post = Post.find(params[:id])
+        @name = current_user.name
+        @username = current_user.username
     end
 
     def update
