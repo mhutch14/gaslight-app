@@ -23,8 +23,6 @@ class PostsController < ApplicationController
 
     def show
         @post = Post.find(params[:id])
-        @name = current_user.name
-        @username = current_user.username
     end
 
     def update
