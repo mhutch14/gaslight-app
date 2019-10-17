@@ -13,14 +13,14 @@
 				<% if user_signed_in? && current_user.id == @post.user_id %>
 		    		<%= link_to "Edit", edit_post_path(@post), class:"button" %>
 				<% else %>
-					<%= link_to "Edit", edit_post_path(@post), data: { confirm: "This is not your post you may not edit!" }, class:"button" %>
+					<%= link_to "Edit", root_path, data: { confirm: "This is not your post you may not edit!" }, class:"button" %>
 				<% end %>
 		  	</p>
 		  	<p class="level-item">
 				<% if user_signed_in? && current_user.id == @post.user_id %>  
 					<%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class:"button is-danger" %>
 				<% else %>
-					<%= link_to "Delete", post_path(@post), data: { confirm: "This is not your post you may not delete!" }, class:"button is-danger" %>
+					<%= link_to "Delete", root_path, data: { confirm: "This is not your post you may not delete!" }, class:"button is-danger" %>
 				<% end %>
 				</p>
 		  </div>
